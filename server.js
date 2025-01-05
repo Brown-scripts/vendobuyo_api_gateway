@@ -42,6 +42,10 @@ const proxyConfig = (serviceName, targetUrl) => ({
   },
 });
 
+app.get('/test', (req, res) => {
+  res.status(200).json({ message: 'Hello from Vendobuyo API!' });
+});
+
 // Proxy requests to Auth Service
 app.use(
   '/api/auth',
