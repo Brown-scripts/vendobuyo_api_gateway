@@ -25,6 +25,23 @@ function debugRequest(req, serviceName, targetUrl) {
   console.log(`[DEBUG] Forwarding to ${serviceName} at ${targetUrl}${req.url}`);
 }
 
+// Proxy configuration object
+const proxyConfig = (serviceName, targetUrl) => ({
+  target: targetUrl,
+  changeOrigin: true, // Ensure Host header matches the target
+  on: {
+    proxyReq: (proxyReq, req) => {
+      console.log(`[DEBUG] Proxying request to ${serviceName}: ${targetUrl}${req.url}`);
+    },
+    proxyRes: (proxyRes, req, res) => {
+      console.log(`[DEBUG] Response from ${serviceName} for ${req.url} - Status: ${proxyRes.statusCode}`);
+    },
+    error: (err, req, res) => {
+      console.error(`[ERROR] Error occurred while proxying to ${serviceName}: ${err.message}`);
+    },
+  },
+});
+
 // Proxy requests to Auth Service
 app.use(
   '/api/auth',
@@ -32,19 +49,7 @@ app.use(
     debugRequest(req, 'Auth Service', AUTH_SERVICE_URL);
     next();
   },
-  createProxyMiddleware({
-    target: AUTH_SERVICE_URL,
-    changeOrigin: true, // Ensure Host header matches the target
-    onProxyReq: (proxyReq, req) => {
-      console.log(`[DEBUG] Proxying request to Auth Service: ${AUTH_SERVICE_URL}${req.url}`);
-    },
-    onProxyRes: (proxyRes, req, res) => {
-      console.log(`[DEBUG] Response from Auth Service for ${req.url} - Status: ${proxyRes.statusCode}`);
-    },
-    onError: (err, req, res) => {
-      console.error(`[ERROR] Error occurred while proxying to Auth Service: ${err.message}`);
-    },
-  })
+  createProxyMiddleware(proxyConfig('Auth Service', AUTH_SERVICE_URL))
 );
 
 // Proxy requests to Product Service
@@ -55,19 +60,7 @@ app.use(
     debugRequest(req, 'Product Service', PRODUCT_SERVICE_URL);
     next();
   },
-  createProxyMiddleware({
-    target: PRODUCT_SERVICE_URL,
-    changeOrigin: true,
-    onProxyReq: (proxyReq, req) => {
-      console.log(`[DEBUG] Proxying request to Product Service: ${PRODUCT_SERVICE_URL}${req.url}`);
-    },
-    onProxyRes: (proxyRes, req, res) => {
-      console.log(`[DEBUG] Response from Product Service for ${req.url} - Status: ${proxyRes.statusCode}`);
-    },
-    onError: (err, req, res) => {
-      console.error(`[ERROR] Error occurred while proxying to Product Service: ${err.message}`);
-    },
-  })
+  createProxyMiddleware(proxyConfig('Product Service', PRODUCT_SERVICE_URL))
 );
 
 // Proxy requests to Order Service
@@ -78,19 +71,7 @@ app.use(
     debugRequest(req, 'Order Service', ORDER_SERVICE_URL);
     next();
   },
-  createProxyMiddleware({
-    target: ORDER_SERVICE_URL,
-    changeOrigin: true,
-    onProxyReq: (proxyReq, req) => {
-      console.log(`[DEBUG] Proxying request to Order Service: ${ORDER_SERVICE_URL}${req.url}`);
-    },
-    onProxyRes: (proxyRes, req, res) => {
-      console.log(`[DEBUG] Response from Order Service for ${req.url} - Status: ${proxyRes.statusCode}`);
-    },
-    onError: (err, req, res) => {
-      console.error(`[ERROR] Error occurred while proxying to Order Service: ${err.message}`);
-    },
-  })
+  createProxyMiddleware(proxyConfig('Order Service', ORDER_SERVICE_URL))
 );
 
 // Proxy requests to Notification Service
@@ -101,19 +82,7 @@ app.use(
     debugRequest(req, 'Notification Service', NOTIFICATION_SERVICE_URL);
     next();
   },
-  createProxyMiddleware({
-    target: NOTIFICATION_SERVICE_URL,
-    changeOrigin: true,
-    onProxyReq: (proxyReq, req) => {
-      console.log(`[DEBUG] Proxying request to Notification Service: ${NOTIFICATION_SERVICE_URL}${req.url}`);
-    },
-    onProxyRes: (proxyRes, req, res) => {
-      console.log(`[DEBUG] Response from Notification Service for ${req.url} - Status: ${proxyRes.statusCode}`);
-    },
-    onError: (err, req, res) => {
-      console.error(`[ERROR] Error occurred while proxying to Notification Service: ${err.message}`);
-    },
-  })
+  createProxyMiddleware(proxyConfig('Notification Service', NOTIFICATION_SERVICE_URL))
 );
 
 // Default error handler
