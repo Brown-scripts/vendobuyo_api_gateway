@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "3a380cc0-df04-4335-95ab-0c60bbdc31ef",
+		"name": "VendoBuyo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12005417"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"eacquahh@gmail.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"seller\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"eacquahh@gmail.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "validate token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDI4OTE0LCJleHAiOjE3MzYwMzI1MTR9.1-ElfhAA64xClwZjdEme2Gp1bpbXrpk4ENzt8TTjRaY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/auth/validate-token"
+			},
+			"response": []
+		},
+		{
+			"name": "create product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDI4OTE0LCJleHAiOjE3MzYwMzI1MTR9.1-ElfhAA64xClwZjdEme2Gp1bpbXrpk4ENzt8TTjRaY"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Wireless Bluetooth Headphones",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "High-quality wireless headphones with noise-cancellation and up to 20 hours of battery life.",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "99.99",
+							"type": "text"
+						},
+						{
+							"key": "stockQuantity",
+							"value": "150",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ebo/Downloads/wireless_headphones.jpg"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "update product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDI4OTE0LCJleHAiOjE3MzYwMzI1MTR9.1-ElfhAA64xClwZjdEme2Gp1bpbXrpk4ENzt8TTjRaY"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Wireless Bluetooth Headphones",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "High-quality wireless headphones with noise-cancellation and up to 20 hours of battery life.",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "99.99",
+							"type": "text"
+						},
+						{
+							"key": "stockQuantity",
+							"value": "149",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ebo/Downloads/wireless_headphones.jpg"
+						}
+					]
+				},
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/products/6779b7bb244db74c7c68a5ac"
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDMwOTU4LCJleHAiOjE3MzYwMzQ1NTh9.5ob8Pt4FlGYVnnkmpZ1tFc5h7rWUF8amksJd8-cQCuo"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/products/6779b7bb244db74c7c68a5ac"
+			},
+			"response": []
+		},
+		{
+			"name": "get all products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDk5ODcwLCJleHAiOjE3MzYxMDM0NzB9.imwRdNmWkVuLmKUri8A0uW6kaMgmqsKWaG1kulof4BA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDk5ODcwLCJleHAiOjE3MzYxMDM0NzB9.imwRdNmWkVuLmKUri8A0uW6kaMgmqsKWaG1kulof4BA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"products\": [\r\n    {\r\n      \"productId\": \"6779bd6f9ab48df57e72249a\",\r\n      \"quantity\": 1,\r\n      \"price\": 99.99\r\n    }\r\n  ],\r\n  \"totalPrice\": 99.99\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "get user orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDMyODQ3LCJleHAiOjE3MzYwMzY0NDd9.pqcekmV9HA1lxTvAQg4NKeOv7WKN1zzKMpXH-G7TXwc"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "update order status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDMyODQ3LCJleHAiOjE3MzYwMzY0NDd9.pqcekmV9HA1lxTvAQg4NKeOv7WKN1zzKMpXH-G7TXwc"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"processing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/orders/6779bf0309d2c580a6b68895/status"
+			},
+			"response": []
+		},
+		{
+			"name": "send notification",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDMyODQ3LCJleHAiOjE3MzYwMzY0NDd9.pqcekmV9HA1lxTvAQg4NKeOv7WKN1zzKMpXH-G7TXwc"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"\",\r\n    \"receipient\": \"\",\r\n    \"data\": {\r\n\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://vendobuyo-api-gateway.onrender.com/api/notifications"
+			},
+			"response": []
+		}
+	]
+}
