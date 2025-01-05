@@ -3,10 +3,12 @@ const httpProxy = require('http-proxy');
 const dotenv = require('dotenv');
 const { authenticateToken } = require('./middleware/auth');
 const { errorHandler } = require('./middleware/errorHandler');
+const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 const proxy = httpProxy.createProxyServer();
 
 const PORT = process.env.PORT || 3000;
