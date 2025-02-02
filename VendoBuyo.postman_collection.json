@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "61031eb0-ea24-4d9b-8db2-14c70843674c",
-		"name": "VendoBuyo",
+		"_postman_id": "254e5a6f-2cbd-463c-96db-8f453409a6c8",
+		"name": "VendoBuyo Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30100725"
 	},
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"eacquahh@gmail.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"seller\"\r\n}\r\n",
+					"raw": "{\r\n  \"email\": \"eacquahh@gmail.com\",\r\n  \"phone\": \"233201161093\",\r\n  \"name\": \"Acquah\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"seller\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,13 +21,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://vendobuyo-api-gateway.onrender.com/api/auth/register",
-					"protocol": "https",
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
 					"host": [
-						"vendobuyo-api-gateway",
-						"onrender",
-						"com"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"auth",
@@ -52,13 +51,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://vendobuyo-api-gateway.onrender.com/api/auth/login",
-					"protocol": "https",
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
 					"host": [
-						"vendobuyo-api-gateway",
-						"onrender",
-						"com"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"auth",
@@ -74,6 +72,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzliOGQ2MTJiOTU0ODQ5NGY0MjgxZWUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4Mjc1NzI1LCJleHAiOjE3MzgyNzkzMjV9.QnMFgoqOuUtPj7zncEj_rDWeu2VUs1SdvGE7NQV9uYE",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -86,17 +94,59 @@
 					}
 				},
 				"url": {
-					"raw": "https://vendobuyo-api-gateway.onrender.com/api/auth/profile",
-					"protocol": "https",
+					"raw": "http://localhost:3000/api/auth/profile",
+					"protocol": "http",
 					"host": [
-						"vendobuyo-api-gateway",
-						"onrender",
-						"com"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"auth",
 						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users (admin)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzliOGQ2MTJiOTU0ODQ5NGY0MjgxZWUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4Mjc1NzI1LCJleHAiOjE3MzgyNzkzMjV9.QnMFgoqOuUtPj7zncEj_rDWeu2VUs1SdvGE7NQV9uYE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"eacquahh@gmail.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						""
 					]
 				}
 			},
@@ -141,7 +191,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDI4OTE0LCJleHAiOjE3MzYwMzI1MTR9.1-ElfhAA64xClwZjdEme2Gp1bpbXrpk4ENzt8TTjRaY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NTEwNzIzLCJleHAiOjE3Mzg1MTQzMjN9.a1AhkQNwSzrlADBPd73qsESLYEfncG7uEe7MWy77oio",
 							"type": "string"
 						}
 					]
@@ -153,17 +203,17 @@
 					"formdata": [
 						{
 							"key": "title",
-							"value": "Wireless Bluetooth Headphones",
+							"value": "Grocery Set",
 							"type": "text"
 						},
 						{
 							"key": "description",
-							"value": "High-quality wireless headphones with noise-cancellation and up to 20 hours of battery life.",
+							"value": "A bag containing basic groceries for a simple meal",
 							"type": "text"
 						},
 						{
 							"key": "price",
-							"value": "99.99",
+							"value": "267.50",
 							"type": "text"
 						},
 						{
@@ -174,7 +224,12 @@
 						{
 							"key": "image",
 							"type": "file",
-							"src": "/C:/Users/Ebo/Downloads/wireless_headphones.jpg"
+							"src": "/C:/Users/user/Desktop/School/L400_SEM_1/web software arch/VendoBuyo/server/vendobuyo_product_service/groceries.jpg"
+						},
+						{
+							"key": "shopId",
+							"value": "679f96a258d16651af7ab832",
+							"type": "text"
 						}
 					]
 				},
@@ -188,6 +243,46 @@
 					"path": [
 						"api",
 						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create shop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NTEwNzIzLCJleHAiOjE3Mzg1MTQzMjN9.a1AhkQNwSzrlADBPd73qsESLYEfncG7uEe7MWy77oio",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"American Groceries\",\r\n    \"description\": \"Groceries\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/shops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"shops"
 					]
 				}
 			},
@@ -295,7 +390,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDk5ODcwLCJleHAiOjE3MzYxMDM0NzB9.imwRdNmWkVuLmKUri8A0uW6kaMgmqsKWaG1kulof4BA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzliOGQ2MTJiOTU0ODQ5NGY0MjgxZWUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4Mjc5NDQ0LCJleHAiOjE3MzgyODMwNDR9.izMeNHdPy-vPN8Xhks328i9nbKZv_SwoZNdoVw4vods",
 							"type": "string"
 						}
 					]
@@ -303,16 +398,207 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://vendobuyo-api-gateway.onrender.com/api/products",
-					"protocol": "https",
+					"raw": "http://localhost:3000/api/products/",
+					"protocol": "http",
 					"host": [
-						"vendobuyo-api-gateway",
-						"onrender",
-						"com"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
-						"products"
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all shops",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzliOGQ2MTJiOTU0ODQ5NGY0MjgxZWUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4Mjc5NDQ0LCJleHAiOjE3MzgyODMwNDR9.izMeNHdPy-vPN8Xhks328i9nbKZv_SwoZNdoVw4vods",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/shops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"shops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get seller shops",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NDkzNDI5LCJleHAiOjE3Mzg0OTcwMjl9.yfBfOAMN52NZ6T1iuy_acEYf9sPRJmLq6UV41IKcRhI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/shops/seller",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"shops",
+						"seller"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get shop by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NDkzNDI5LCJleHAiOjE3Mzg0OTcwMjl9.yfBfOAMN52NZ6T1iuy_acEYf9sPRJmLq6UV41IKcRhI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/shops/shop/679c04b8f647b18278c80a17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"shops",
+						"shop",
+						"679c04b8f647b18278c80a17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all shop products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NDkzNDI5LCJleHAiOjE3Mzg0OTcwMjl9.yfBfOAMN52NZ6T1iuy_acEYf9sPRJmLq6UV41IKcRhI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/shop/679ced7eabe0f97786d21a83",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"shop",
+						"679ced7eabe0f97786d21a83"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzliOGQ2MTJiOTU0ODQ5NGY0MjgxZWUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4Mjc5NDQ0LCJleHAiOjE3MzgyODMwNDR9.izMeNHdPy-vPN8Xhks328i9nbKZv_SwoZNdoVw4vods",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/product/679c0591f647b18278c80a1a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"product",
+						"679c0591f647b18278c80a1a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all my products as a seller",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzliOGQ2MTJiOTU0ODQ5NGY0MjgxZWUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4Mjc5NDQ0LCJleHAiOjE3MzgyODMwNDR9.izMeNHdPy-vPN8Xhks328i9nbKZv_SwoZNdoVw4vods",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/seller",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"seller"
 					]
 				}
 			},
@@ -326,7 +612,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDk5ODcwLCJleHAiOjE3MzYxMDM0NzB9.imwRdNmWkVuLmKUri8A0uW6kaMgmqsKWaG1kulof4BA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NTMxOTA1LCJleHAiOjE3Mzg1MzU1MDV9.J5fxTI6nR5_RxpYDbF9gzCRm5SJtHoe84PW9Os-t60M",
 							"type": "string"
 						}
 					]
@@ -335,7 +621,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"products\": [\r\n    {\r\n      \"productId\": \"6779bd6f9ab48df57e72249a\",\r\n      \"quantity\": 1,\r\n      \"price\": 99.99\r\n    }\r\n  ],\r\n  \"totalPrice\": 99.99\r\n}\r\n",
+					"raw": "{\r\n    \"sellerIds\": [\"679ceb2a6870a3fd6c9233fe\"],\r\n  \"products\": [\r\n    {\r\n      \"productId\": \"679f988058d16651af7ab835\",\r\n      \"quantity\": 1,\r\n      \"price\": 267.50\r\n    }\r\n  ],\r\n  \"totalPrice\": 267.50\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -343,13 +629,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://vendobuyo-api-gateway.onrender.com/api/orders",
-					"protocol": "https",
+					"raw": "http://localhost:3000/api/orders",
+					"protocol": "http",
 					"host": [
-						"vendobuyo-api-gateway",
-						"onrender",
-						"com"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"orders"
@@ -366,7 +651,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDMyODQ3LCJleHAiOjE3MzYwMzY0NDd9.pqcekmV9HA1lxTvAQg4NKeOv7WKN1zzKMpXH-G7TXwc",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NTEwNzIzLCJleHAiOjE3Mzg1MTQzMjN9.a1AhkQNwSzrlADBPd73qsESLYEfncG7uEe7MWy77oio",
 							"type": "string"
 						}
 					]
@@ -383,6 +668,69 @@
 					"path": [
 						"api",
 						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get my orders (seller)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NTEwNzIzLCJleHAiOjE3Mzg1MTQzMjN9.a1AhkQNwSzrlADBPd73qsESLYEfncG7uEe7MWy77oio",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/seller-orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"seller-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get seller orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NDU3MjgxLCJleHAiOjE3Mzg0NjA4ODF9.N6KHkYh9xXfRFRxH_BPV6XGBWku6poIomUOJgP3MkbA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/seller-orders/679b8d612b9548494f4281ee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"seller-orders",
+						"679b8d612b9548494f4281ee"
 					]
 				}
 			},
@@ -465,6 +813,76 @@
 					"path": [
 						"api",
 						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create delivery",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NTM2NTEyLCJleHAiOjE3Mzg1NDAxMTJ9.6Wtffu-wo_ktip_kkSKMRaYyKG9EoU-_QihRfff_zKI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"orderId\": \"679fe7dda4a0c7f3bbf49b8a\", \r\n  \"deliveryStatus\": \"pending\",\r\n  \"deliveryDate\": \"2024-02-01T12:00:00.000Z\",\r\n  \"notes\": \"Handle with care. Fragile item.\",\r\n  \"destination\": {\r\n    \"address\": \"123 Main Street\",\r\n    \"city\": \"New York\",\r\n    \"postalCode\": \"10001\",\r\n    \"country\": \"USA\",\r\n    \"latitude\": 40.712776,\r\n    \"longitude\": -74.005974,\r\n    \"recipientPhoneNumber\": \"0201161093\"\r\n  },\r\n  \"currentLocation\": {\r\n    \"latitude\": 40.73061,\r\n    \"longitude\": -73.935242\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/deliveries/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"deliveries",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "initiate payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\":\"679fe7dda4a0c7f3bbf49b8a\",\r\n    \"amount\":267.50,\r\n    \"email\":\"eacquahh@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/payments/initiate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"payments",
+						"initiate"
 					]
 				}
 			},

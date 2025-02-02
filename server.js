@@ -15,6 +15,9 @@ const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL || 'http://localhost:3001'
 const PRODUCT_SERVICE_URL = process.env.PRODUCT_SERVICE_URL || 'http://localhost:3002';
 const ORDER_SERVICE_URL = process.env.ORDER_SERVICE_URL || 'http://localhost:3003';
 const NOTIFICATION_SERVICE_URL = process.env.NOTIFICATION_SERVICE_URL || 'http://localhost:3004';
+const PAYMENT_SERVICE_URL = process.env.PAYMENT_SERVICE_URL || 'http://localhost:3005';
+const DELIVERY_SERVICE_URL = process.env.DELIVERY_SERVICE_URL || 'http://localhost:3006';
+
 
 // Debug helper function
 function debugRequest(req, serviceName, targetUrl) {
@@ -87,6 +90,27 @@ app.use(
     next();
   },
   createProxyMiddleware(proxyConfig('Notification Service', NOTIFICATION_SERVICE_URL))
+);
+
+// Proxy requests to Payment Service
+app.use(
+  '/api/payments',
+  (req, res, next) => {
+    debugRequest(req, 'Payment Service', PAYMENT_SERVICE_URL);
+    next();
+  },
+  createProxyMiddleware(proxyConfig('Payment Service', PAYMENT_SERVICE_URL))
+);
+
+// Proxy requests to Delivery Service
+app.use(
+  '/api/deliveries',
+  authenticateToken,
+  (req, res, next) => {
+    debugRequest(req, 'Deliveries Service', DELIVERY_SERVICE_URL);
+    next();
+  },
+  createProxyMiddleware(proxyConfig('Delivery Service', DELIVERY_SERVICE_URL))
 );
 
 // Default error handler
