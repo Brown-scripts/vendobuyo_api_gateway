@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "254e5a6f-2cbd-463c-96db-8f453409a6c8",
-		"name": "VendoBuyo Copy",
+		"name": "VendoBuyo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30100725"
 	},
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"eacquahh@gmail.com\",\r\n  \"phone\": \"233201161093\",\r\n  \"name\": \"Acquah\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"seller\"\r\n}\r\n",
+					"raw": "{\r\n  \"email\": \"kathlyyyn492@gmail.com\",\r\n  \"phone\": \"2331234567\",\r\n  \"name\": \"Kathleen\",\r\n  \"password\": \"password336\",\r\n  \"role\": \"buyer\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"eacquahh@gmail.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"raw": "{\r\n  \"email\": \"eacquahh@gmail.com\",\r\n  \"password\": \"password123\"\r\n}\r\n// {\r\n//   \"email\": \"kathlyyyn492@gmail.com\",\r\n//   \"password\": \"password336\"\r\n// }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -191,7 +191,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NTEwNzIzLCJleHAiOjE3Mzg1MTQzMjN9.a1AhkQNwSzrlADBPd73qsESLYEfncG7uEe7MWy77oio",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4ODQ2MTk1LCJleHAiOjE3Mzg4NDk3OTV9.nO-IWiWPS1n35W1Ge3vu4UHtGRIFXAiykby1PaOrX6w",
 							"type": "string"
 						}
 					]
@@ -203,32 +203,32 @@
 					"formdata": [
 						{
 							"key": "title",
-							"value": "Grocery Set",
+							"value": "Television Set",
 							"type": "text"
 						},
 						{
 							"key": "description",
-							"value": "A bag containing basic groceries for a simple meal",
+							"value": "The new Samsung HQ TV set",
 							"type": "text"
 						},
 						{
 							"key": "price",
-							"value": "267.50",
+							"value": "6750.00",
 							"type": "text"
 						},
 						{
 							"key": "stockQuantity",
-							"value": "150",
+							"value": "10",
 							"type": "text"
 						},
 						{
 							"key": "image",
 							"type": "file",
-							"src": "/C:/Users/user/Desktop/School/L400_SEM_1/web software arch/VendoBuyo/server/vendobuyo_product_service/groceries.jpg"
+							"src": "/C:/Users/user/Downloads/tv.jpg"
 						},
 						{
 							"key": "shopId",
-							"value": "679f96a258d16651af7ab832",
+							"value": "679ced7eabe0f97786d21a83",
 							"type": "text"
 						}
 					]
@@ -351,38 +351,6 @@
 			"response": []
 		},
 		{
-			"name": "delete product",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDMwOTU4LCJleHAiOjE3MzYwMzQ1NTh9.5ob8Pt4FlGYVnnkmpZ1tFc5h7rWUF8amksJd8-cQCuo",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "https://vendobuyo-api-gateway.onrender.com/api/products/6779b7bb244db74c7c68a5ac",
-					"protocol": "https",
-					"host": [
-						"vendobuyo-api-gateway",
-						"onrender",
-						"com"
-					],
-					"path": [
-						"api",
-						"products",
-						"6779b7bb244db74c7c68a5ac"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "get all products",
 			"request": {
 				"auth": {
@@ -390,7 +358,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzliOGQ2MTJiOTU0ODQ5NGY0MjgxZWUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4Mjc5NDQ0LCJleHAiOjE3MzgyODMwNDR9.izMeNHdPy-vPN8Xhks328i9nbKZv_SwoZNdoVw4vods",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4ODU0NDU4LCJleHAiOjE3Mzg4NTgwNTh9.-KIWSIsVRDi7_GVb8Dmzu-USnU5PE7rT1p-z22O-fNw",
 							"type": "string"
 						}
 					]
@@ -421,7 +389,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzliOGQ2MTJiOTU0ODQ5NGY0MjgxZWUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4Mjc5NDQ0LCJleHAiOjE3MzgyODMwNDR9.izMeNHdPy-vPN8Xhks328i9nbKZv_SwoZNdoVw4vods",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4ODU0NDU4LCJleHAiOjE3Mzg4NTgwNTh9.-KIWSIsVRDi7_GVb8Dmzu-USnU5PE7rT1p-z22O-fNw",
 							"type": "string"
 						}
 					]
@@ -439,6 +407,38 @@
 						"api",
 						"products",
 						"shops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc5YWY4ZWQwNWZlZjYwMDc0NDQxMjMiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM2MDMwOTU4LCJleHAiOjE3MzYwMzQ1NTh9.5ob8Pt4FlGYVnnkmpZ1tFc5h7rWUF8amksJd8-cQCuo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://vendobuyo-api-gateway.onrender.com/api/products/6779b7bb244db74c7c68a5ac",
+					"protocol": "https",
+					"host": [
+						"vendobuyo-api-gateway",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"6779b7bb244db74c7c68a5ac"
 					]
 				}
 			},
@@ -612,7 +612,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4NTMxOTA1LCJleHAiOjE3Mzg1MzU1MDV9.J5fxTI6nR5_RxpYDbF9gzCRm5SJtHoe84PW9Os-t60M",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2EyNTViODUzZjg3YWViNjkxZWIwMmUiLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE3Mzg4MjQyMTUsImV4cCI6MTczODgyNzgxNX0.YMd3wDEFz3Fwwt_l5YEBkWh2TjaOH7WHlsVqQevW__w",
 							"type": "string"
 						}
 					]
@@ -621,7 +621,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"sellerIds\": [\"679ceb2a6870a3fd6c9233fe\"],\r\n  \"products\": [\r\n    {\r\n      \"productId\": \"679f988058d16651af7ab835\",\r\n      \"quantity\": 1,\r\n      \"price\": 267.50\r\n    }\r\n  ],\r\n  \"totalPrice\": 267.50\r\n}\r\n",
+					"raw": "{\r\n    \"sellerIds\": [\"679ceb2a6870a3fd6c9233fe\"],\r\n  \"products\": [\r\n    {\r\n      \"productId\": \"679d00d960cfb3a03f56680c\",\r\n      \"quantity\": 1,\r\n      \"price\": 79.99\r\n    }\r\n  ],\r\n  \"totalPrice\": 79.99\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -865,7 +865,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"orderId\":\"679fe7dda4a0c7f3bbf49b8a\",\r\n    \"amount\":267.50,\r\n    \"email\":\"eacquahh@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"orderId\": \"67a45a7569147c99658a9135\",\r\n    \"email\": \"kathlyyyn492@gmail.com\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -883,6 +883,43 @@
 						"api",
 						"payments",
 						"initiate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzljZWIyYTY4NzBhM2ZkNmM5MjMzZmUiLCJyb2xlIjoic2VsbGVyIiwiaWF0IjoxNzM4ODU0NDU4LCJleHAiOjE3Mzg4NTgwNTh9.-KIWSIsVRDi7_GVb8Dmzu-USnU5PE7rT1p-z22O-fNw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/search?query=train",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "train"
+						}
 					]
 				}
 			},
